@@ -9,4 +9,5 @@ Services
 1. VPN in
 1. VPN through
 1. FS sync
+1. DNS
 
