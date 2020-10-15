@@ -17,10 +17,13 @@ Run a DR capable self-hosted domain support system across 2 locations
 
 ### Server requirements
 - Ports for the following services need to be accessible via internet.   
-If servers are on a local net, port forwarding needs to be set up on a WAN router.
-    + SSH: 22
-    + DNS: 53
-    + WEB: 80,443
+If servers are on a private network(10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a WAN router.  
+
+|service|ports|description
+|---|---|---|
+|SSH|22|Secure shell access
+|DNS|53|Domain name server
+|WEB|80,443|Web server
 
 ## Technologies
 1. FS
