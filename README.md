@@ -16,8 +16,11 @@ Run a DR capable self-hosted domain support system across 2 locations
 1. ...
 
 ### Server requirements
-- Ports for the following services need to be accessible via internet
-    + SSH
+- Ports for the following services need to be accessible via internet.   
+If servers are on a local net, port forwarding needs to be set up on a WAN router.
+    + SSH: 22
+    + DNS: 53
+    + WEB: 80,443
 
 ## Technologies
 1. FS
