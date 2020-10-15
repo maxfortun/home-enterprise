@@ -5,8 +5,8 @@ Run a resilient self-hosted domain support system across 2 locations
 
 ## Key results
 1. DNS
-1. Email
 1. Web
+1. Email
 
 ## Initiatives
 1. Set up 2 servers
@@ -16,8 +16,8 @@ Run a resilient self-hosted domain support system across 2 locations
 1. ...
 
 ### Server requirements
-- Ports for the following services need to be accessible via internet.   
-If servers are on a private network(10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a WAN router.  
+- Ports for the following services need to be accessible via the internet.   
+If servers are on a [private network](https://en.wikipedia.org/wiki/Private_network) (10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a WAN router.  
 
 |service|ports|description
 |---|---|---|
