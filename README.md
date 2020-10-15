@@ -28,7 +28,7 @@ If servers are on a [private network](https://en.wikipedia.org/wiki/Private_netw
 - Servers need to run docker
 
 #### DNS
-1. For each server's [ip address](https://en.wikipedia.org/wiki/IP_address) set up an individual [name server](https://en.wikipedia.org/wiki/Name_server) entry for your domain with your [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
+1. For each server's [ip address](https://en.wikipedia.org/wiki/IP_address) set up an individual [name server](https://en.wikipedia.org/wiki/Name_server) entry for your [domain name](https://en.wikipedia.org/wiki/Domain_name) with your [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
 
 
 ## Technologies
