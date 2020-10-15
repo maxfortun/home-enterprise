@@ -27,6 +27,15 @@ If servers are on a [private network](https://en.wikipedia.org/wiki/Private_netw
 
 - Servers need to run docker
 
+### File system
+This is where home-enterprise will run.  
+Under a server local non-root user create a directory `home-enterprise`.  
+
+  /home-enterprise  
+    /mnt  
+      /etc   
+    
+
 #### DNS
 1. For each server's [ip address](https://en.wikipedia.org/wiki/IP_address) set up an individual [name server](https://en.wikipedia.org/wiki/Name_server) entry for your [domain name](https://en.wikipedia.org/wiki/Domain_name) with your [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
 
