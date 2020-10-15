@@ -15,6 +15,10 @@ Run a DR capable self-hosted domain support system across 2 locations
 1. Configure and run DNS on both servers
 1. ...
 
+### Server requirements
+- Ports for the following services need to be accessible via internet
+    + SSH
+
 ## Technologies
 1. FS
 1. VPN in
