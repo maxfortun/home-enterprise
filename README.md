@@ -16,7 +16,7 @@ Run a resilient self-hosted domain support system across 2 locations
 1. ...
 
 ### Server requirements
-- Ports for the following services need to be accessible via the internet.   
+- Server ports for the services listed below need to be accessible via the internet.   
 If servers are on a [private network](https://en.wikipedia.org/wiki/Private_network) (10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a WAN router.  
 
 |service|ports|description
@@ -24,6 +24,9 @@ If servers are on a [private network](https://en.wikipedia.org/wiki/Private_netw
 |SSH|22|Secure shell access
 |DNS|53|Domain name server
 |WEB|80,443|Web server
+
+- Servers need to run docker
+
 
 ## Technologies
 1. FS
