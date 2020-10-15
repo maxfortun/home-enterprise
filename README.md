@@ -1,7 +1,7 @@
 # home-enterprise
 
 ## Objective
-Run a DR capable self-hosted domain support system across 2 locations
+Run a resilient self-hosted domain support system across 2 locations
 
 ## Key results
 1. DNS
