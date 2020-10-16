@@ -26,6 +26,8 @@ If servers are on a [private network](https://en.wikipedia.org/wiki/Private_netw
   |WEB|80,443|Web server
 
 - Servers need to run docker
+- Servers need to have ip forwarding enabled.  
+    sysctl -w net.inet.ip.forwarding=1
 
 ### File system
 This is where home-enterprise will run.  
