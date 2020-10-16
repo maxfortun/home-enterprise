@@ -17,17 +17,18 @@ Run a resilient self-hosted domain support system across 2 locations
 
 ### Server requirements
 - Server ports for the services listed below need to be accessible via the internet.   
-If servers are on a [private network](https://en.wikipedia.org/wiki/Private_network) (10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a WAN router.  
+If servers are on a [private network](https://en.wikipedia.org/wiki/Private_network) (10/8, 172.16/12, 192.168/16), port forwarding needs to be set up on a the internet router.  
+For the purposes of the demonstration server ports will be prefixed with 40.
 
-  |service|ports|description
-  |---|---|---|
-  |SSH|22|Secure shell access
-  |DNS|53|Domain name server
-  |WEB|80,443|Web server
+  |service|internet ports|server ports|description
+  |---|---|---|---|
+  |SSH|22|4022|Secure shell access
+  |DNS|53|4053|Domain name server
+  |WEB|80,443|4080,40443|Web server
 
 - Servers need to run docker
-- Servers need to have ip forwarding enabled.  
-    sysctl -w net.inet.ip.forwarding=1
+
+Note: Sometimes containers lose outbound connectivity. In this case you need to restart the docker daemon.
 
 ### File system
 This is where home-enterprise will run.  
@@ -36,7 +37,19 @@ Under a server local non-root user create a directory `home-enterprise`.
   /home-enterprise  
     /mnt  
       /etc   
-    
+    /root/.ssh
+
+### SSH
+This will allow to access `home-enterprise/mnt` file system via ssh. 
+It requires a dedicated ssh key pair in `/root/.ssh`.  
+```
+[ -d mnt/root/.ssh ] || mkdir -p mnt/root/.ssh
+chown og-rwx mnt/root/.ssh
+ssh-keygen -t rsa -b 4096 -f mnt/root/.ssh/id_rsa -q -N ""
+```
+
+### Lsyncd
+Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote server.  
 
 #### DNS
 1. For each server's [ip address](https://en.wikipedia.org/wiki/IP_address) set up an individual [name server](https://en.wikipedia.org/wiki/Name_server) entry for your [domain name](https://en.wikipedia.org/wiki/Domain_name) with your [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
