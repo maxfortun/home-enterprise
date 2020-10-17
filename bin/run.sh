@@ -1,4 +1,4 @@
-#!/bin/bash -e
+#!/bin/bash -ex
 
 cd $(dirname $0)/..
 WD=$(pwd)
@@ -11,5 +11,6 @@ while read repo; do
 	bin/run.sh "$@"
 	popd
 done <<_EOT_
+	docker-sshd
 	docker-lsyncd
 _EOT_

@@ -57,7 +57,7 @@ Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote serv
 
 ## Technologies
 1. FS
-1. VPN in
+1. SSH
 1. Lsyncd
 1. DNS
 1. Nginx
@@ -65,5 +65,8 @@ Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote serv
 1. LDAP
 1. SMTP
 1. IMAP
+1. MYSQL
+1. RoundCube Webmail
+1. VPN in
 1. VPN through
 

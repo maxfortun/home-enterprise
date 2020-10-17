@@ -7,5 +7,6 @@ while read repo; do
 	bin/build.sh
 	popd
 done <<_EOT_
+	docker-sshd
 	docker-lsyncd
 _EOT_
