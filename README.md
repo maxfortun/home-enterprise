@@ -43,10 +43,12 @@ Under a server local non-root user create a directory `home-enterprise`.
 This will allow to access `home-enterprise/mnt` file system via ssh. 
 It requires a dedicated ssh key pair in `/root/.ssh`.  
 ```
-[ -d mnt/root/.ssh ] || mkdir -p mnt/root/.ssh
-chown og-rwx mnt/root/.ssh
-ssh-keygen -t rsa -b 4096 -f mnt/root/.ssh/id_rsa -q -N ""
+HOST_MNT="mnt/$(hostname -s)"
+[ -d $HOST_MNT/root/.ssh ] || mkdir $HOST_MNT/root/.ssh
+chown og-rwx $HOST_MNT/root/.ssh
+ssh-keygen -t rsa -b 4096 -f $HOST_MNT/root/.ssh/id_rsa -q -N ""
 ```
+scp $HOST_MNT/root/.ssh/id_rsa.pub to remote host mnt/`remote hostname`/root/.ssh/authorized_keys
 
 ### Lsyncd
 Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote server.  

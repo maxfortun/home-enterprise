@@ -3,8 +3,8 @@
 cd $(dirname $0)/..
 WD=$(pwd)
 
-export MNT="$WD/mnt"
-export HOST_MNT="$MNT/$(hostname -s)"
+export HOST_MNT="$WD/mnt"
+export GUEST_MNT="$MNT/$(hostname -s)"
 
 cd repo
 while read repo; do
