@@ -4,7 +4,7 @@ cd $(dirname $0)/..
 WD=$(pwd)
 
 export HOST_MNT="$WD/mnt"
-export GUEST_MNT="$MNT/$(hostname -s)"
+export GUEST_MNT="$HOST_MNT/$(hostname -s)"
 
 cd repo
 while read repo; do
