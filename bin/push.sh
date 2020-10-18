@@ -6,7 +6,7 @@ cd $(dirname $0)/..
 cd repo
 
 while read repo; do
-	[ -d "${repo}" ] && pushd "$repo" && git pull "$@" && popd
+	[ -d "${repo}" ] && pushd "$repo" && git push "$@" && popd
 done <<_EOT_
 	docker-sshd
 	docker-lsyncd
