@@ -34,10 +34,29 @@ Note: Sometimes containers lose outbound connectivity. In this case you need to 
 This is where home-enterprise will run.  
 Under a server local non-root user create a directory `home-enterprise`.  
 
-  /home-enterprise  
-    /mnt  
-      /etc   
-    /root/.ssh
+    mnt
+    └── $(hostname -s)
+        ├── etc
+        │   ├── lsyncd.conf
+        │   └── ssh
+        │       ├── ssh_host_dsa_key
+        │       ├── ssh_host_dsa_key.pub
+        │       ├── ssh_host_ecdsa_key
+        │       ├── ssh_host_ecdsa_key.pub
+        │       ├── ssh_host_ed25519_key
+        │       ├── ssh_host_ed25519_key.pub
+        │       ├── ssh_host_rsa_key
+        │       ├── ssh_host_rsa_key.pub
+        │       └── sshd_config
+        ├── root
+        │   └── .ssh
+        │       ├── authorized_keys
+        │       ├── id_rsa
+        │       ├── id_rsa.pub
+        │       └── known_hosts
+        └── var
+            └── run
+                └── sshd
 
 ### SSH
 This will allow to access `home-enterprise/mnt` file system via ssh. 
