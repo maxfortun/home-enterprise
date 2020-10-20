@@ -6,7 +6,7 @@ WD=$(pwd)
 export HOST_MNT="$WD/mnt"
 export GUEST_MNT="$HOST_MNT/$(hostname -s)"
 
-dig TXT +short o-o.myaddr.l.google.com @ns1.google.com > $GUEST_MNT/public_ip
+dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | sed 's/"//g' > $GUEST_MNT/public_ip
 
 cd repo
 while read repo; do
