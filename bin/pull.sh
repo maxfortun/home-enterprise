@@ -10,4 +10,6 @@ while read repo; do
 done <<_EOT_
 	docker-sshd
 	docker-lsyncd
+	dns-config
+	docker-bind
 _EOT_
