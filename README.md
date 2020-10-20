@@ -28,7 +28,7 @@ For the purposes of the demonstration server ports will be prefixed with 40.
 
 - Servers need to run docker
 
-Note: Sometimes containers lose outbound connectivity. In this case you need to restart the docker daemon.
+Note: Sometimes containers lose outbound connectivity or permissions to access docker mounts. In this case you need to restart the docker daemon.  
 
 ### File system
 This is where home-enterprise will run.  
