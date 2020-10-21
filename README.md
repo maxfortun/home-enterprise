@@ -72,9 +72,12 @@ scp $HOST_MNT/root/.ssh/id_rsa.pub to remote host mnt/`remote hostname`/root/.ss
 ### Lsyncd
 Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote server.  
 
-#### DNS
+### DNS
 1. For each server's [ip address](https://en.wikipedia.org/wiki/IP_address) set up an individual [name server](https://en.wikipedia.org/wiki/Name_server) entry for your [domain name](https://en.wikipedia.org/wiki/Domain_name) with your [domain name registrar](https://en.wikipedia.org/wiki/Domain_name_registrar).
+1. Populate mnt/$(hostname -s)/etc/bind/named.conf.zones with zone configs.
+1. Place each zone file into mnt/$(hostname -s)/etc/bind/zones/
 
+### Nginx
 
 ## Technologies
 1. FS
