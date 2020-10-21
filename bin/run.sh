@@ -18,4 +18,5 @@ done <<_EOT_
 	docker-lsyncd
 	dns-config
 	docker-bind
+	docker-dkimproxy
 _EOT_
