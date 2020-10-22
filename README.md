@@ -77,6 +77,10 @@ Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote serv
 1. Populate mnt/$(hostname -s)/etc/bind/named.conf.zones with zone configs.
 1. Place each zone file into mnt/$(hostname -s)/etc/bind/zones/
 
+Note: You may also want to add your internal router's IP as a first name server into /etc/resolv.conf   
+
+### Certificates
+
 ### Nginx
 
 ## Technologies
