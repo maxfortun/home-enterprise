@@ -12,6 +12,7 @@ done <<_EOT_
 	docker-lsyncd
 	dns-config
 	docker-bind
+	docker-certbot-dns
 	docker-nginx
 	docker-opensmtpd
 _EOT_
