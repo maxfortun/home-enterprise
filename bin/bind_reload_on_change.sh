@@ -4,7 +4,8 @@ pushd "$(dirname $0)"
 SWD=$(pwd)
 BWD=$(dirname "$SWD")
 
-GUEST_MNT=${GUEST_MNT:-$BWD/mnt}
+export HOST_MNT="$BWD/mnt"
+export GUEST_MNT="$HOST_MNT/$(hostname -s)"
 
 DEST="$GUEST_MNT/etc/bind/zones"
 
