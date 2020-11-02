@@ -14,7 +14,6 @@ while read zoneFile; do
 	[ -f "$BWD/repo/dns-config/zones/$zone" ] || continue
 	DEST=${zoneFile#$HOST_MNT}
 	DEST=$GUEST_MNT/${DEST#/*/}
-	continue
 	diff $zoneFile $DEST && continue
 	cp -a $zoneFile $DEST
 done < <( fswatch $paths )
