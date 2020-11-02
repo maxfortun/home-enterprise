@@ -10,6 +10,6 @@ DEST="$GUEST_MNT/etc/bind/zones"
 
 while read zoneFile; do
 	zone=$(basename $zoneFile)
-	[ -f "$BWD/zones/$zone" ] || continue
-	docker exec bind rndc reload $zone
+	[ -f "$BWD/repo/dns-config/zones/$zone" ] || continue
+	docker exec bind kill -HUP 1
 done < <( fswatch "$DEST" )
