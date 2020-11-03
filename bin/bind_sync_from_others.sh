@@ -4,6 +4,8 @@ pushd "$(dirname $0)"
 SWD=$(pwd)
 BWD=$(dirname "$SWD")
 
+$SWD/plock.sh $(basename $0) $$
+
 export HOST_MNT="$BWD/mnt"
 export GUEST_MNT="$HOST_MNT/$(hostname -s)"
 
