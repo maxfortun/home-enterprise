@@ -1,4 +1,4 @@
-#!/bin/bash -ex
+#!/bin/bash -x
 
 pushd "$(dirname $0)"
 SWD=$(pwd)
