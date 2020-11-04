@@ -82,6 +82,7 @@ Lsyncd pushes files as they change from `home-enterprise/mnt` to the remote serv
 Note: You may also want to add your internal router's IP as a first name server into /etc/resolv.conf   
 
 ### Certificates
+Run `repo/docker-certbot-dns/bin/run.sh` to generate certificates
 
 ### Nginx
 

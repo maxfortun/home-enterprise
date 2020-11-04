@@ -11,4 +11,5 @@ done <<_EOT_
 	docker-lsyncd
 	dns-config
 	docker-bind
+	docker-certbot-dns
 _EOT_
