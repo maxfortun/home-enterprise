@@ -13,4 +13,5 @@ done <<_EOT_
 	dns-config
 	docker-bind
 	docker-certbot-dns
+	docker-openldap
 _EOT_
