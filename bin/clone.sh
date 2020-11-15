@@ -13,6 +13,7 @@ done <<_EOT_
 	dns-config
 	docker-bind
 	docker-certbot-dns
+	docker-openldap
 	docker-nginx
 	docker-opensmtpd
 _EOT_
