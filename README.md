@@ -1,15 +1,17 @@
 # home-enterprise
 
 ## Objective
-Run a resilient self-hosted domain support system across 2 locations
+Run a resilient self-hosted domain support system across at least two locations
 
 ## Key results
 1. DNS
 1. Web
 1. Email
+1. VPN in
+1. VPN through
 
 ## Initiatives
-1. Set up 2 servers
+1. Set up two servers
 1. Dedicate a file system location on each for home-enterprise
 1. Set up bi-directional synchronization of the file system
 1. Configure and run DNS on both servers
