@@ -14,6 +14,7 @@ done <<_EOT_
 	docker-bind
 	docker-certbot-dns
 	docker-openldap
+	docker-tor
 	docker-nginx
 	docker-opensmtpd
 _EOT_

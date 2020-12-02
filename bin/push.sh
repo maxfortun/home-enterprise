@@ -14,4 +14,5 @@ done <<_EOT_
 	docker-bind
 	docker-certbot-dns
 	docker-openldap
+	docker-tor
 _EOT_

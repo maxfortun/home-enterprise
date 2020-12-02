@@ -1,10 +1,7 @@
 #!/bin/bash -ex
 
 cd $(dirname $0)/..
-WD=$(pwd)
-
-export HOST_MNT="$WD/mnt"
-export GUEST_MNT="$HOST_MNT/$(hostname -s)"
+. bin/setenv.sh
 
 dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | sed 's/"//g' > $GUEST_MNT/public_ip
 
@@ -20,4 +17,5 @@ done <<_EOT_
 	docker-bind
 	docker-certbot-dns
 	docker-openldap
+	docker-tor
 _EOT_
