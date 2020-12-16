@@ -15,6 +15,7 @@ done <<_EOT_
 	docker-certbot-dns
 	docker-openldap
 	docker-tor
+	docker-openvpn
 	docker-nginx
 	docker-opensmtpd
 _EOT_
