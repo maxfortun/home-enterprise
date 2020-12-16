@@ -27,6 +27,8 @@ For the purposes of the demonstration server ports will be prefixed with 40.
   |SSH|22|4022|Secure shell access
   |DNS|53|4053|Domain name server
   |WEB|80,443|4080,40443|Web server
+  |VPN IN|1194|1194|VPN
+  |TOR|N/A|9100|TOR proxy
 
 - Servers need to run docker
 
@@ -36,29 +38,34 @@ Note: Sometimes containers lose outbound connectivity or permissions to access d
 This is where home-enterprise will run.  
 Under a server local non-root user create a directory `home-enterprise`.  
 
-    mnt
-    └── $(hostname -s)
-        ├── etc
+        mnt/server-id/
+        ├── etc/
+        │   ├── bind/
+        │   │   ├── named.conf
+        │   │   ├── named.conf.options
+        │   │   ├── named.conf.zones
+        │   │   └── zones/
+        │   ├── dkimproxy/
+        │   │   ├── dkimproxy_out.conf
+        │   ├── letsencrypt/
         │   ├── lsyncd.conf
-        │   └── ssh
-        │       ├── ssh_host_dsa_key
-        │       ├── ssh_host_dsa_key.pub
-        │       ├── ssh_host_ecdsa_key
-        │       ├── ssh_host_ecdsa_key.pub
-        │       ├── ssh_host_ed25519_key
-        │       ├── ssh_host_ed25519_key.pub
-        │       ├── ssh_host_rsa_key
-        │       ├── ssh_host_rsa_key.pub
-        │       └── sshd_config
-        ├── root
-        │   └── .ssh
-        │       ├── authorized_keys
-        │       ├── id_rsa
-        │       ├── id_rsa.pub
-        │       └── known_hosts
-        └── var
-            └── run
-                └── sshd
+        │   ├── openldap/
+        │   │   └── slapd.conf
+        │   ├── openvpn/
+        │   │   ├── client/
+        │   │   └── server/
+        │   │       └── server.conf
+        │   ├── ssh/
+        │   │   └── sshd_config
+        │   └── tor/
+        │       └── torrc
+        ├── root/
+        └── var/
+            ├── lib/
+            │   └── openldap/
+            └── run/
+                └── sshd/
+
 
 ### SSH
 This will allow to access `home-enterprise/mnt` file system via ssh. 
@@ -87,6 +94,14 @@ Note: You may also want to add your internal router's IP as a first name server 
 export EMAIL=your@email.here
 Run `repo/docker-certbot-dns/bin/run.sh` to generate certificates.  
 It will attempt to run renewals daily so when the time comes the certs will be updated.  
+
+### TOR
+1. Have a TOR proxy on each server - because you can and should value your privacy!
+It's running on 9100, so change your SOCKS5 proxy to point to it and make sure DNS is also resolved via TOR to take advantage of .onion domains.
+
+### VPN in
+1. Have an incoming VPN running on each server so that you can access internal services. 
+
 
 ### Nginx
 
