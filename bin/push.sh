@@ -16,4 +16,5 @@ done <<_EOT_
 	docker-openldap
 	docker-tor
 	docker-openvpn
+	docker-envoy
 _EOT_
