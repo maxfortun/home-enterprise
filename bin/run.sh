@@ -1,7 +1,8 @@
 #!/bin/bash -ex
 
-cd $(dirname $0)/..
-. bin/setenv.sh
+. $(dirname $0)/setenv.sh
+
+cd $WD
 
 dig TXT +short o-o.myaddr.l.google.com @ns1.google.com | sed 's/"//g' > $GUEST_MNT/public_ip
 
@@ -10,14 +11,4 @@ while read repo; do
 	pushd "$repo" || continue
 	bin/run.sh "$@"
 	popd
-done <<_EOT_
-	docker-sshd
-	docker-lsyncd
-	dns-config
-	docker-bind
-	docker-certbot-dns
-	docker-openldap
-	docker-tor
-	docker-openvpn
-	docker-envoy
-_EOT_
+done < $BIN/services

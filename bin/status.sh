@@ -1,20 +1,12 @@
 #!/bin/bash -e
 
-cd $(dirname $0)/..
+. $(dirname $0)/setenv.sh
+
+cd $WD
 
 [ -d repo ] || mkdir repo
 cd repo
 
 while read repo; do
 	[ -d "${repo}" ] && pushd "$repo" && git status && popd
-done <<_EOT_
-	docker-sshd
-	docker-lsyncd
-	dns-config
-	docker-bind
-	docker-certbot-dns
-	docker-openldap
-	docker-tor
-	docker-openvpn
-	docker-envoy
-_EOT_
+done < $BIN/services
