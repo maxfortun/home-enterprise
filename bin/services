@@ -9,5 +9,4 @@ docker-openvpn
 docker-envoy
 docker-vault
 docker-mongodb
-docker-activemq-artemis
 docker-opensmtpd
