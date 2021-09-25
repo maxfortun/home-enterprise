@@ -10,7 +10,7 @@ export GUEST_MNT="$HOST_MNT/$(hostname -s)"
 paths=$(ls -d $HOST_MNT/* | grep -v $( hostname -s )\$ )
 
 while read zoneFile; do
-	[ -e "$zoneFile" ] || continue
+	[ -f "$zoneFile" ] || continue
 
 	zone=$(basename "$zoneFile")
 	[ -f "$WD/repo/dns-config/zones/$zone" ] || continue
